@@ -12,11 +12,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
+let smpt_login=process.env.SMPT_LOGIN || "-----"
+let smpt_password=process.env.SMPT_PASSWORD || "-----"
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: "timofeevniki3@gmail.com", // generated ethereal user
-        pass: "studentik" // generated ethereal password
+        user: smpt_login, 
+        pass: smpt_password // generated ethereal password
     }
 });
 
@@ -53,6 +56,8 @@ let {name,email,description}=req.body
     res.send('ok');
 });
 
+
+let port=process.env.PORT || 3010
 
 app.listen(3010, function () {
     console.log('Example app listening on port 3000!');
