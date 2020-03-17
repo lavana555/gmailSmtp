@@ -12,14 +12,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-let smpt_login=process.env.SMPT_LOGIN || "-----"
-let smpt_password=process.env.SMPT_PASSWORD || "-----"
+let smtp_login=process.env.SMPT_LOGIN || "-----"
+let smtp_password=process.env.SMPT_PASSWORD || "-----"
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: smpt_login, 
-        pass: smpt_password // generated ethereal password
+        user: smtp_login, 
+        pass: smtp_password // generated ethereal password
     }
 });
 
