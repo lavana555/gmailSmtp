@@ -57,8 +57,8 @@ let {name,email,description}=req.body
 });
 
 
-let port=process.env.PORT || 3010
+let PORT=process.env.PORT || 3010
 
-app.listen(3010, function () {
+app.listen(PORT, function () {
     console.log('Example app listening on port 3000!');
 });
