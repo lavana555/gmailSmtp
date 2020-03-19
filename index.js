@@ -21,8 +21,10 @@ let transporter = nodemailer.createTransport({
         user: smtp_login, 
         pass: smtp_password // generated ethereal password
     }
+
 });
 
+console.log(smtp_login,smtp_password)
 
 
 app.get('/', function (req, res) {
@@ -36,6 +38,7 @@ let {name,email,description}=req.body
 
     let info = await transporter.sendMail({
         from: 'nikita', // sender address
+       
         to: "timofeevniki3@gmail.com", // list of receivers
         subject: "Hello ✔", // Subject line
 
