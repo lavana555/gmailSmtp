@@ -18,8 +18,8 @@ let smtp_password=process.env.SMPT_PASSWORD || "studentik"
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: "portfoliolavana@gmail.com", 
-        pass: "studentik" // generated ethereal password
+        user: smtp_login, 
+        pass: smtp_password // generated ethereal password
     }
 
 });
