@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-let smtp_login=process.env.SMPT_LOGIN || "timofeevniki3@gmail.com"
+let smtp_login=process.env.SMPT_LOGIN || "portfoliolavana@gmail.com"
 let smtp_password=process.env.SMPT_PASSWORD || "studentik"
 
 let transporter = nodemailer.createTransport({
